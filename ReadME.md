@@ -1,5 +1,14 @@
 # ArrowOS 13.1 .repo split block zipfile
 
-下载所有分卷文件，然后使用以下命令解压缩
+1. 安装 aria2 
+sudo apt update
+sudo apt install aria2
 
+2. 下载所有分卷文件
+aria2c -c -j 5 -i urls.txt
+
+3. 解压缩所有文件
 cat arrow-13.1_* | tar -xvf -
+
+4. 同步文件
+repo sync -c -j8
